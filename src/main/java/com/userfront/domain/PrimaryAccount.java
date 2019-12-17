@@ -11,7 +11,7 @@ public class PrimaryAccount {
 
     private List<PrimaryTransaction> primaryTransactionList;
 
-
+    // get, set, toString
 
     public Long getId() {
         return id;

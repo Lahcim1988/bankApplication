@@ -14,11 +14,13 @@ public class User {
 
     private PrimaryAccount primaryAccount;
 
-    private SavingAccount savingAccount;
+    private SavingsAccount savingAccount;
 
     private List<Appointment> appointmentList;
 
     private List<Recipient> recipientList;
+
+    // get, set, toString
 
     public Long getUserId() {
         return userId;
@@ -92,11 +94,11 @@ public class User {
         this.primaryAccount = primaryAccount;
     }
 
-    public SavingAccount getSavingAccount() {
+    public SavingsAccount getSavingAccount() {
         return savingAccount;
     }
 
-    public void setSavingAccount(SavingAccount savingAccount) {
+    public void setSavingAccount(SavingsAccount savingAccount) {
         this.savingAccount = savingAccount;
     }
 
