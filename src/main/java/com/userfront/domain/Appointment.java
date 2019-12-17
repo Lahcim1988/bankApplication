@@ -1,15 +1,21 @@
 package com.userfront.domain;
 
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity                                 // database entity - use by hibernate
 public class Appointment {
 
+    @Id                                 // primary key
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private Date date;
     private String location;
     private String description;
     private boolean confirmed;      // default - false
 
+    @ManyToOne                              // referring to relationship appointments to user
+    @JoinColumn(name = "user_id")
     private User user;
 
     // get, set
@@ -60,5 +66,16 @@ public class Appointment {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    @Override
+    public String toString() {
+        return "Appointment{" +
+                "id=" + id +
+                ", date=" + date +
+                ", location='" + location + '\'' +
+                ", description='" + description + '\'' +
+                ", user=" + user +
+                '}';
     }
 }
