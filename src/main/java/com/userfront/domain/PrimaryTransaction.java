@@ -1,10 +1,14 @@
 package com.userfront.domain;
 
+import javax.persistence.*;
 import javax.xml.crypto.Data;
 import java.math.BigDecimal;
 
+@Entity
 public class PrimaryTransaction {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private Data date;
     private String description;
@@ -12,6 +16,9 @@ public class PrimaryTransaction {
     private String status;
     private double amount;
     private BigDecimal availableBalance;
+
+    @ManyToOne
+    @JoinColumn(name = "primary_account_id")
     private PrimaryAccount primaryAccount;
 
     // constructors
@@ -21,7 +28,6 @@ public class PrimaryTransaction {
 
     public PrimaryTransaction(Data date, String description, String type, String status, double amount,
                               BigDecimal availableBalance, PrimaryAccount primaryAccount) {
-        super();
         this.date = date;
         this.description = description;
         this.type = type;
