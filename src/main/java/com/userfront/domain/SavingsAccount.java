@@ -53,4 +53,5 @@ public class SavingsAccount {
     public void setSavingsTransactionList(List<SavingsTransaction> savingsTransactionList) {
         this.savingsTransactionList = savingsTransactionList;
     }
+
 }

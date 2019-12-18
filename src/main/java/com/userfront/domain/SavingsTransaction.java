@@ -19,27 +19,31 @@ public class SavingsTransaction {
 
     @ManyToOne
     @JoinColumn(name = "savings_account_id")
-    private SavingsAccount savingAccount;        // SavingsAccount field
+    private SavingsAccount savingsAccount;        // SavingsAccount field
 
     // constructors
 
     public SavingsTransaction() {
     }
 
-    public SavingsTransaction(Date date, String description, String type, String status, double amount, BigDecimal availableBalance, SavingsAccount savingAccount) {
+    public SavingsTransaction(Date date, String description, String type, String status, double amount, BigDecimal availableBalance, SavingsAccount savingsAccount) {
         this.date = date;
         this.description = description;
         this.type = type;
         this.status = status;
         this.amount = amount;
         this.availableBalance = availableBalance;
-        this.savingAccount = savingAccount;
+        this.savingsAccount = savingsAccount;
     }
 
     // get, set
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Date getDate() {
@@ -90,11 +94,7 @@ public class SavingsTransaction {
         this.availableBalance = availableBalance;
     }
 
-    public SavingsAccount getSavingAccount() {
-        return savingAccount;
-    }
-
-    public void setSavingAccount(SavingsAccount savingAccount) {
-        this.savingAccount = savingAccount;
+    public SavingsAccount getSavingsAccount() {
+        return savingsAccount;
     }
 }

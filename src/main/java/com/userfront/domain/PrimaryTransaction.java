@@ -1,33 +1,28 @@
 package com.userfront.domain;
 
 import javax.persistence.*;
-import javax.xml.crypto.Data;
 import java.math.BigDecimal;
+import java.util.Date;
 
 @Entity
 public class PrimaryTransaction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
-    private Data date;
+    private Long id;
+    private Date date;
     private String description;
     private String type;
     private String status;
     private double amount;
     private BigDecimal availableBalance;
 
-    @ManyToOne
-    @JoinColumn(name = "primary_account_id")
-    private PrimaryAccount primaryAccount;
-
     // constructors
 
     public PrimaryTransaction() {
     }
 
-    public PrimaryTransaction(Data date, String description, String type, String status, double amount,
-                              BigDecimal availableBalance, PrimaryAccount primaryAccount) {
+    public PrimaryTransaction(Date date, String description, String type, String status, double amount, BigDecimal availableBalance, PrimaryAccount primaryAccount) {
         this.date = date;
         this.description = description;
         this.type = type;
@@ -37,21 +32,26 @@ public class PrimaryTransaction {
         this.primaryAccount = primaryAccount;
     }
 
+    @ManyToOne
+    @JoinColumn(name = "primary_account_id")
+    private PrimaryAccount primaryAccount;
+
+
     // get, set,
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public Data getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(Data date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
