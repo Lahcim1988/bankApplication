@@ -11,14 +11,14 @@ Banking System REST, Frontend, Backend, DB
 Technology:
 
 Frontend: 
-** Html/CSS, 
-** JS,  
-** Bootstrap, 
-** Thymeleaf
+* Html/CSS, 
+* JS,  
+* Bootstrap, 
+* Thymeleaf
 
 Backend: 
-** Java 8, 
-** Spring Boot,  
-** Spring Security, 
-** Hibernate, 
-** MySQL
+* Java 8, 
+* Spring Boot,  
+* Spring Security, 
+* Hibernate, 
+* MySQL
